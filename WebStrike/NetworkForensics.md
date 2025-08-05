@@ -12,7 +12,8 @@
   - Command and Control
   - Exfiltration  
 
-  > **Scenario**: A suspicious file was identified on a company web server, raising alarms within the intranet. The Development team flagged the anomaly, suspecting potential malicious activity. To address the issue, the network team captured critical network traffic and prepared a PCAP file for review.
+
+> **Scenario**: A suspicious file was identified on a company web server, raising alarms within the intranet. The Development team flagged the anomaly, suspecting potential malicious activity. To address the issue, the network team captured critical network traffic and prepared a PCAP file for review.
 Your task is to analyze the provided PCAP file to uncover how the file appeared and determine the extent of any unauthorized activity.
 
 ---
@@ -34,6 +35,7 @@ Your task is to analyze the provided PCAP file to uncover how the file appeared 
 
 ![IP geolocation](IPgeo.png)
 
+---
 
 ### Q2 — **Attacker full User-Agent**
 
@@ -44,8 +46,9 @@ Your task is to analyze the provided PCAP file to uncover how the file appeared 
 📌 _Filter for HTTP GET requests using http.request.method == GET. Expand the Hypertext Transfer Protocol section in a GET packet and find the User-Agent field to view the attacker's User-Agent string._
 
 
----![Capture Wireshark](Wiresharkuser.png)
+![Capture Wireshark](Wiresharkuser.png)
 
+---
 
 ### Q3 — **Malicius Web-Shell**
 
@@ -55,8 +58,10 @@ Your task is to analyze the provided PCAP file to uncover how the file appeared 
 
 📌 _Use the filter: http.request.method == POST. Then, analyze the HTTP POST packets by following the HTTP stream. To follow the HTTP stream, Right-click on the selected packet and select Follow > HTTP Stream to view the conversation. After following the HTTP stream, observe the uploaded file name. Note that two upload attempts were made._
 
----![Capture VWireshark http stream](Wiresharkshell.png)
 
+![Capture VWireshark http stream](Wiresharkshell.png)
+
+---
 
 ### Q4 — **Detection of file's location**
 
@@ -67,8 +72,9 @@ Your task is to analyze the provided PCAP file to uncover how the file appeared 
 📌 _Apply the filter http.request.uri contains "<Uploaded_Filename>" and analyze the packet's HTTP URI to locate the upload directory._
 
 
----![Capture Wireshark Uploads](Wiresharkup.png)
+![Capture Wireshark Uploads](Wiresharkup.png)
 
+---
 
 ### Q5 — **Port of targeted machine**
 
@@ -79,8 +85,9 @@ Your task is to analyze the provided PCAP file to uncover how the file appeared 
 📌 _Apply http.request.method == POST, right-click the POST packet, and select "Follow > HTTP Stream" to view the uploaded file content. Use tcp.stream eq 4.._
 
 
----![Capture Wireshark](Wireshark8080.png)
+![Capture Wireshark](Wireshark8080.png)
 
+---
 
 ### Q6 — **Searching for Compromised Data**
 
@@ -91,9 +98,9 @@ Your task is to analyze the provided PCAP file to uncover how the file appeared 
 📌 _Apply the filter: tcp.dstport == <Detected_Port>. Follow the TCP stream to identify any file names or commands indicating data being exfiltrated._
 
 
----![Capture Wireshark tcp.stream](Wiresharkpass.png)
+![Capture Wireshark tcp.stream](Wiresharkpass.png)
 
-
+---
 
 ## 🧰 Tools Used
 
