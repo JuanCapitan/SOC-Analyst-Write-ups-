@@ -28,9 +28,11 @@ Your task is to analyze the provided PCAP file to uncover how the file appeared 
 📌 _First look at the source and destination IP addresses in the PCAP file, then filter for HTTP GET requests using the filter: http.request.method == GET identifing the source IP address associated with the request and finally use a geo-IP lookup service to identify source IP._
      
     
----![Capture Wireshark](Wireshark1.png)
+![Capture Wireshark](Wireshark1.png)
 
----![IP geolocation](IPgeo.png)
+---
+
+![IP geolocation](IPgeo.png)
 
 
 ### Q2 — **Attacker full User-Agent**
