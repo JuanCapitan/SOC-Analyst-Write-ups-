@@ -171,6 +171,19 @@ This case illustrates the critical role of packet-level inspection in uncovering
 
 ---
 
+## 📑 Normas y marcos aplicables
+
+- **MITRE ATT&CK**:  
+  - Tácticas / Técnicas relacionadas: _(ej. T1190 Exploitation for Web Shell, T1105 Ingress Tool Transfer)_
+
+- **NIST Cybersecurity Framework (CSF)**:  
+  - _(ej. Detect - DE.AE: Detección de anomalías y eventos)_  
+  - _(ej. Respond - RS.MI: Mitigación de incidentes)_
+
+- **ISO/IEC 27001 (Anexo A)**:  
+  - _(ej. A.12.4 – Registro y monitoreo)_  
+  - _(ej. A.16.1 – Gestión de incidentes de seguridad de la información)_
+
 ## 📁 Author
 
 **Juan Capitán** – Cybersecurity Analyst  
